@@ -1,0 +1,13 @@
+import 'package:info.kyorohiro.dart.jwt/jwt.dart';
+import 'dart:convert' as conv;
+
+void main(List<String> arguments) {
+  print('Hello world!');
+  var token = 'eyJraWQiOiI4NkQ4OEtmIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJodHRwczovL2FwcGxlaWQuYXBwbGUuY29tIiwiYXVkIjoiaW5mby5reW9yb2hpcm8uc2l3YS50ZXN0IiwiZXhwIjoxNTgzMjUwNjQxLCJpYXQiOjE1ODMyNTAwNDEsInN1YiI6IjAwMDYwOS5kOWJiMDg5Zjk0NGY0MDI4YTFkNDQzYjIxNzEwMGIzYi4xNjM1IiwiY19oYXNoIjoiT0EtQ3NjSU4ySGdIcVVteThyTk00dyIsImVtYWlsIjoiM2I0cGRyamkyZEBwcml2YXRlcmVsYXkuYXBwbGVpZC5jb20iLCJlbWFpbF92ZXJpZmllZCI6InRydWUiLCJpc19wcml2YXRlX2VtYWlsIjoidHJ1ZSIsImF1dGhfdGltZSI6MTU4MzI1MDA0MSwibm9uY2Vfc3VwcG9ydGVkIjp0cnVlfQ.N7YW4ixXh-Qjwi4j3Y5QD8iduFIIk6U1k4psH2sD7whJwBi_7hhOZDCwyEqdD3D2O8wXXzpuHsJMIHD6tNCjNM4HiRAy7vXdl7igH3cdz_LZNoWBaiqzXTysA2M_IB9BkZfolMoxCfZE1hT9xAshjt5rASDDvkZtVG8HKZ4d-nV_ANCeTlgS_0-CkSJalck_sMdKq7K-lRz7DL0X3p9rkkDqceaUp7HeNP7SjiajsnvaDIx9TwCJcmCq4fT5_WWbW7uWc3SMh-5DWT_5PwcKr2YdaAwfEwYYmF-1wKph37OYKHXwygccKWahZvWrlWaSTqm6UJs90Zt6w6x8HVDsKQ';
+  var parts = JWTParts.fromToken(token);
+  print(conv.utf8.decode(parts.header));
+  print(conv.utf8.decode(parts.payload));
+  print(parts.signature);
+}
+
+
